@@ -1,0 +1,49 @@
+version: "3.9"
+services:
+  core-real:
+    image: secsi/dockerized-android-core-real-device
+    privileged: true
+    networks:
+      blueborne-net:
+        ipv4_address: 10.5.0.2
+  ui:
+    image: secsi/dockerized-android-ui
+    ports:
+      - "8080:80"
+    networks:
+      blueborne-net:
+        ipv4_address: 10.5.0.3
+  attacker_phishing:
+    image: gophish/gophish
+    ports:
+      - "3333:3333"
+      - "8081:8080"
+    volumes:
+      - ./phishing:/home/phishing
+    networks:
+      blueborne-net:
+        ipv4_address: 10.5.0.4
+  attacker_blueborne:
+    image: kalilinux/kali-rolling
+    tty: true
+    volumes:
+      - ./exploit:/home/exploit
+      - ./dependencies-blueborne:/home/dependencies
+    privileged: true
+    network_mode: "host"
+  attacker_web_server:
+    image: kalilinux/kali-rolling
+    tty: true
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./webserver:/home/webserver
+      - ./dependencies-webserver:/home/dependencies
+    networks:
+      blueborne-net:
+        ipv4_address: 10.5.0.5
+networks:
+  blueborne-net:
+    ipam:
+      config:
+        - subnet: 10.5.0.1/24

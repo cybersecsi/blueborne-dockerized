@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FakeSpotify</string>
+    <string name="first_string">Millions of songs.</string>
+    <string name="second_string">Free on Spotify.</string>
+    <string name="logo_description">logo</string>
+    <string name="first_button_text">Upgrade to Spotify Premium</string>
+    <string name="require_connection">Sei offline. Verifica la connessione e riprova.</string>
+    <string name="upgrade_premium">Upgrade to Spotify Premium</string>
+    <string name="upgrade_failed">Upgrade a Spotify Premium non riuscito</string>
+</resources>
