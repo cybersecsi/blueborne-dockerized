@@ -1,6 +1,6 @@
 # BlueBorne Dockerized
 
-This is the repo to reproduce the BlueBorne kill-chain on [Dockerized Android](https://github.com/cybersecsi/dockerized-android) as described [here](https://secsi.it/lab/blueborne-kill-chain-on-dockerized-android), to fully understand the code you should also take a look [here](https://secsi.it/lab/bypass-aslr-through-function-address-inference/)
+This is the repo to reproduce the BlueBorne kill-chain on [Dockerized Android](https://github.com/cybersecsi/dockerized-android) as described [here](https://secsi.io/blog/blueborne-kill-chain-on-dockerized-android), to fully understand the code you should also take a look [here](https://secsi.io/blog/bypass-aslr-through-function-address-inference/)
 
 ## Full reproduction
 Here are some useful tips for the **full** reproduction of the exploit:
